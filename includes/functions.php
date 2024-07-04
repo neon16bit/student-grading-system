@@ -7,6 +7,7 @@ function authenticate($username, $password)
 
     if ($username === $config['username'] && password_verify($password, $config['password'])) {
         $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
         return true;
     }
 

@@ -5,6 +5,8 @@ if (!is_logged_in()) {
     header("Location: index.php");
     exit;
 }
+
+include 'includes/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +46,7 @@ if (!is_logged_in()) {
         <button type="submit">Submit</button>
     </form>
     <p id="result"></p>
-
+    <a href="view_grades.php">View All Student Grades</a>
     <script src="js/script.js"></script>
 </body>
 
