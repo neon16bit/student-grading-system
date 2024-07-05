@@ -50,6 +50,8 @@ include 'includes/header.php';
     <p id="result"></p>
     <a href="view_grades.php">View All Student Grades</a>
     <script src="js/script.js"></script>
+
+    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>

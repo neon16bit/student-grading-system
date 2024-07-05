@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <footer>
+    <footer class="footer">
         <p>&copy; neon16bit | <a href="https://github.com/neon16bit">GitHub</a></p>
     </footer>
 

@@ -56,6 +56,7 @@ include 'includes/header.php';
     </table>
     <br><br>
     <a href="grading.php">Enter Grades</a>
+    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>

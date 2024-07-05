@@ -32,9 +32,8 @@ include 'login.php';
             </div>
         </form>
     </div>
-    <div class="footer">
-        <?php include 'includes/footer.php'; ?>
-    </div>
+
+    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>

@@ -93,6 +93,31 @@ button[type="submit"]:hover {
 }
 
 
+.avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #4cceb6;
+    background-color: #74EBD5;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 5px;
+    font-weight: bolder;
+    font-size: larger;
+    text-shadow: -1px -1px 0 #838aaa, 1px -1px 0 #838aaa, -1px 1px 0 #838aaa, 1px 1px 0#838aaa;
+    -webkit-text-stroke: 0.2px #838aaa;
+}
+
+
+.header {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    padding-right: 1%;
+}
+
 .footer {
     position: fixed;
     right: 0;
