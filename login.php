@@ -1,6 +1,8 @@
 <?php
 include 'includes/functions.php';
 
+// $_SESSION['loginError'] = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -9,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: grading.php");
         exit;
     } else {
-        echo "Invalid username or password.";
+        $_SESSION['loginError'] = "Invalid username or password.";
+        header("Location: index.php");
     }
 }

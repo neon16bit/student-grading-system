@@ -9,7 +9,6 @@ function get_logged_in_username()
 
 if (isset($_GET['logout'])) {
     logout();
-    header("Location: index.php");
     exit;
 }
 ?>
@@ -19,7 +18,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <title>Student Grading System</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css?<?php echo time(); ?>">
 </head>
 
 <body>

@@ -14,7 +14,7 @@ include 'includes/header.php';
 
 <head>
     <title>Enter Grades</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css?<?php echo time(); ?>">
 </head>
 
 <body>
