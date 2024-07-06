@@ -30,27 +30,37 @@ include 'includes/header.php';
     <h2>Student Grades</h2>
     <table border="1">
         <tr>
-            <th>ID</th>
             <th>Student ID</th>
             <th>Subject 1 Marks</th>
+            <th>Subject 1 Grade</th>
+            <th>Subject 1 GPA</th>
             <th>Subject 1 Credits</th>
             <th>Subject 2 Marks</th>
+            <th>Subject 2 Grade</th>
+            <th>Subject 2 GPA</th>
             <th>Subject 2 Credits</th>
             <th>Subject 3 Marks</th>
+            <th>Subject 3 Grade</th>
+            <th>Subject 3 GPA</th>
             <th>Subject 3 Credits</th>
             <th>CGPA</th>
         </tr>
         <?php while ($row = $result->fetch_assoc()) : ?>
             <tr>
-                <td><?php echo htmlspecialchars($row['id']); ?></td>
                 <td><?php echo htmlspecialchars($row['student_id']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject1']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject1_credits']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject2']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject2_credits']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject3']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject3_credits']); ?></td>
-                <td><?php echo htmlspecialchars($row['cgpa']); ?></td>
+                <td><?php echo htmlspecialchars($row['subject1_marks']); ?></td>
+                <td><?php echo htmlspecialchars($row['subject1_grade']); ?></td>
+                <td><?php echo htmlspecialchars(number_format((float)$row['subject1_gpa'], 2, '.', '')); ?></td>
+                <td><?php echo htmlspecialchars(number_format((float)$row['subject1_credits'], 2, '.', '')); ?></td>
+                <td><?php echo htmlspecialchars($row['subject2_marks']); ?></td>
+                <td><?php echo htmlspecialchars($row['subject2_grade']); ?></td>
+                <td><?php echo htmlspecialchars(number_format((float)$row['subject2_gpa'], 2, '.', '')); ?></td>
+                <td><?php echo htmlspecialchars(number_format((float)$row['subject2_credits'], 2, '.', '')); ?></td>
+                <td><?php echo htmlspecialchars($row['subject3_marks']); ?></td>
+                <td><?php echo htmlspecialchars($row['subject3_grade']); ?></td>
+                <td><?php echo htmlspecialchars(number_format((float)$row['subject3_gpa'], 2, '.', '')); ?></td>
+                <td><?php echo htmlspecialchars(number_format((float)$row['subject3_credits'], 2, '.', '')); ?></td>
+                <td><?php echo htmlspecialchars(number_format((float)$row['cgpa'], 2, '.', '')); ?></td>
             </tr>
         <?php endwhile; ?>
     </table>
@@ -62,5 +72,6 @@ include 'includes/header.php';
 </html>
 
 <?php
+$result->free();
 $db->close();
 ?>
