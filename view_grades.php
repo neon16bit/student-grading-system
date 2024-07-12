@@ -23,49 +23,52 @@ include 'includes/header.php';
     <title>View Student Grades</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css?<?php echo time(); ?>">
 </head>
 
-<body>
-    <h2>Student Grades</h2>
-    <table border="1">
-        <tr>
-            <th>Student ID</th>
-            <th>Subject 1 Marks</th>
-            <th>Subject 1 Grade</th>
-            <th>Subject 1 GPA</th>
-            <th>Subject 1 Credits</th>
-            <th>Subject 2 Marks</th>
-            <th>Subject 2 Grade</th>
-            <th>Subject 2 GPA</th>
-            <th>Subject 2 Credits</th>
-            <th>Subject 3 Marks</th>
-            <th>Subject 3 Grade</th>
-            <th>Subject 3 GPA</th>
-            <th>Subject 3 Credits</th>
-            <th>CGPA</th>
-        </tr>
-        <?php while ($row = $result->fetch_assoc()) : ?>
-            <tr>
-                <td><?php echo htmlspecialchars($row['student_id']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject1_marks']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject1_grade']); ?></td>
-                <td><?php echo htmlspecialchars(number_format((float)$row['subject1_gpa'], 2, '.', '')); ?></td>
-                <td><?php echo htmlspecialchars(number_format((float)$row['subject1_credits'], 2, '.', '')); ?></td>
-                <td><?php echo htmlspecialchars($row['subject2_marks']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject2_grade']); ?></td>
-                <td><?php echo htmlspecialchars(number_format((float)$row['subject2_gpa'], 2, '.', '')); ?></td>
-                <td><?php echo htmlspecialchars(number_format((float)$row['subject2_credits'], 2, '.', '')); ?></td>
-                <td><?php echo htmlspecialchars($row['subject3_marks']); ?></td>
-                <td><?php echo htmlspecialchars($row['subject3_grade']); ?></td>
-                <td><?php echo htmlspecialchars(number_format((float)$row['subject3_gpa'], 2, '.', '')); ?></td>
-                <td><?php echo htmlspecialchars(number_format((float)$row['subject3_credits'], 2, '.', '')); ?></td>
-                <td><?php echo htmlspecialchars(number_format((float)$row['cgpa'], 2, '.', '')); ?></td>
-            </tr>
-        <?php endwhile; ?>
-    </table>
-    <br><br>
-    <a href="grading.php">Enter Grades</a>
+<body class="view-table-page">
+    <div class="container">
+        <h2>Student Grades</h2>
+        <div class="table-responsive">
+            <table>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Subject 1</th>
+                    <th>Subject 2</th>
+                    <th>Subject 3</th>
+                    <th>CGPA</th>
+                </tr>
+                <?php while ($row = $result->fetch_assoc()) : ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['student_id']); ?></td>
+                        <td>
+                            Marks: <?php echo htmlspecialchars($row['subject1_marks']); ?><br>
+                            Grade: <?php echo htmlspecialchars($row['subject1_grade']); ?><br>
+                            GPA: <?php echo htmlspecialchars(number_format((float)$row['subject1_gpa'], 2, '.', '')); ?><br>
+                            Credits: <?php echo htmlspecialchars(number_format((float)$row['subject1_credits'], 2, '.', '')); ?>
+                        </td>
+                        <td>
+                            Marks: <?php echo htmlspecialchars($row['subject2_marks']); ?><br>
+                            Grade: <?php echo htmlspecialchars($row['subject2_grade']); ?><br>
+                            GPA: <?php echo htmlspecialchars(number_format((float)$row['subject2_gpa'], 2, '.', '')); ?><br>
+                            Credits: <?php echo htmlspecialchars(number_format((float)$row['subject2_credits'], 2, '.', '')); ?>
+                        </td>
+                        <td>
+                            Marks: <?php echo htmlspecialchars($row['subject3_marks']); ?><br>
+                            Grade: <?php echo htmlspecialchars($row['subject3_grade']); ?><br>
+                            GPA: <?php echo htmlspecialchars(number_format((float)$row['subject3_gpa'], 2, '.', '')); ?><br>
+                            Credits: <?php echo htmlspecialchars(number_format((float)$row['subject3_credits'], 2, '.', '')); ?>
+                        </td>
+                        <td><?php echo htmlspecialchars(number_format((float)$row['cgpa'], 2, '.', '')); ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
+        </div>
+        <div style="text-align: center;">
+            <a href="grading.php" class="btn">Enter New Grades</a>
+        </div>
+    </div>
     <?php include 'includes/footer.php'; ?>
 </body>
 

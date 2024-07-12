@@ -51,9 +51,9 @@ function calculate_grade_and_gpa($marks)
     }
 }
 
-// function calculate_cgpa($subject1, $subject1_credits, $subject2, $subject2_credits, $subject3, $subject3_credits)
-// {
-//     $total_credits = $subject1_credits + $subject2_credits + $subject3_credits;
-//     $cgpa = ($subject1['gpa'] * $subject1_credits + $subject2['gpa'] * $subject2_credits + $subject3['gpa'] * $subject3_credits) / $total_credits;
-//     return $cgpa;
-// }
+function calculate_cgpa($subject1, $subject1_credits, $subject2, $subject2_credits, $subject3, $subject3_credits)
+{
+    $total_credits = $subject1_credits + $subject2_credits + $subject3_credits;
+    $cgpa = ($subject1['gpa'] * $subject1_credits + $subject2['gpa'] * $subject2_credits + $subject3['gpa'] * $subject3_credits) / $total_credits;
+    return $cgpa;
+}

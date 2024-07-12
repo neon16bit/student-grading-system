@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject2_credits = (float)$_POST['subject2_credits'];
     $subject3_marks = (float)$_POST['subject3'];
     $subject3_credits = (float)$_POST['subject3_credits'];
-    $cgpa = (float)$_POST['cgpa'];
 
     $subject1 = calculate_grade_and_gpa($subject1_marks);
     $subject2 = calculate_grade_and_gpa($subject2_marks);
     $subject3 = calculate_grade_and_gpa($subject3_marks);
+    $cgpa = (float)calculate_cgpa($subject1, $subject1_credits, $subject2, $subject2_credits, $subject3, $subject3_credits);
 
 
 

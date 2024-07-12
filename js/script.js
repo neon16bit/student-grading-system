@@ -24,16 +24,55 @@ function calculateCGPA() {
     let subject2 = calculateGradeAndGpa(subject2_marks);
     let subject3 = calculateGradeAndGpa(subject3_marks);
 
-    document.getElementById("subject1_grade").innerText = subject1.grade;
-    document.getElementById("subject1_gpa").innerText = subject1.gpa;
-    document.getElementById("subject2_grade").innerText = subject2.grade;
-    document.getElementById("subject2_gpa").innerText = subject2.gpa;
-    document.getElementById("subject3_grade").innerText = subject3.grade;
-    document.getElementById("subject3_gpa").innerText = subject3.gpa;
-
     let total_credits = parseFloat(subject1_credits) + parseFloat(subject2_credits) + parseFloat(subject3_credits);
     let cgpa = ((subject1.gpa * subject1_credits) + (subject2.gpa * subject2_credits) + (subject3.gpa * subject3_credits)) / total_credits;
 
     document.getElementById("cgpa").value = cgpa.toFixed(2);
     document.getElementById("result").innerText = "CGPA: " + cgpa.toFixed(2);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const subjects = ['Computer Networks', 'Internet Programming', 'Database'];
+    let allInputsFilled = false;
+
+    subjects.forEach((subject, index) => {
+        const subjectNumber = index + 1;
+        const marksInput = document.getElementById(`subject${subjectNumber}`);
+        const creditsInput = document.getElementById(`subject${subjectNumber}_credits`);
+        const gradeGpaGroup = document.getElementById(`grade-gpa-group-${subjectNumber}`);
+
+        function checkInputs() {
+            if (marksInput.value !== '' && creditsInput.value !== '') {
+                gradeGpaGroup.style.display = 'block';
+                updateGradeAndGPA(subjectNumber);
+                checkAllInputs();
+            } else {
+                gradeGpaGroup.style.display = 'none';
+                allInputsFilled = false;
+            }
+        }
+
+        marksInput.addEventListener('input', checkInputs);
+        creditsInput.addEventListener('input', checkInputs);
+    });
+
+    function checkAllInputs() {
+        allInputsFilled = subjects.every((_, index) => {
+            const subjectNumber = index + 1;
+            const marksInput = document.getElementById(`subject${subjectNumber}`);
+            const creditsInput = document.getElementById(`subject${subjectNumber}_credits`);
+            return marksInput.value !== '' && creditsInput.value !== '';
+        });
+
+        if (allInputsFilled) {
+            calculateCGPA();
+        }
+    }
+});
+
+function updateGradeAndGPA(subjectNumber) {
+    const marks = document.getElementById(`subject${subjectNumber}`).value;
+    const result = calculateGradeAndGpa(marks);
+    document.getElementById(`subject${subjectNumber}_grade`).textContent = result.grade;
+    document.getElementById(`subject${subjectNumber}_gpa`).textContent = result.gpa.toFixed(2);
 }
