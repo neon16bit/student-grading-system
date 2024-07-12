@@ -26,18 +26,18 @@ include 'includes/header.php';
         <form id="gradesForm" class="grades-form" action="store_grades.php" method="POST">
             <div class="form-group">
                 <label for="student_id">Student ID:</label>
-                <input type="text" id="student_id" name="student_id" required>
+                <input type="text" id="student_id" name="student_id" required maxlength="11">
             </div>
 
             <div class="subject-group">
                 <h4 class="subject-title">Computer Networks</h4>
                 <div class="form-group">
                     <label for="subject1">Marks:</label>
-                    <input type="number" id="subject1" name="subject1" required>
+                    <input type="text" id="subject1" name="subject1" required pattern="^\d*(\.\d+)?$">
                 </div>
                 <div class="form-group">
                     <label for="subject1_credits">Credits:</label>
-                    <input type="number" id="subject1_credits" name="subject1_credits" required>
+                    <input type="text" id="subject1_credits" name="subject1_credits" required pattern="^\d*(\.\d+)?$">
                 </div>
                 <div class="form-group grade-gpa-group" id="grade-gpa-group-1" style="display: none;">
                     <div>
@@ -51,11 +51,11 @@ include 'includes/header.php';
                 <h4 class="subject-title">Internet Programming</h4>
                 <div class="form-group">
                     <label for="subject2">Marks:</label>
-                    <input type="number" id="subject2" name="subject2" required>
+                    <input type="text" id="subject2" name="subject2" required pattern="^\d*(\.\d+)?$">
                 </div>
                 <div class="form-group">
                     <label for="subject2_credits">Credits:</label>
-                    <input type="number" id="subject2_credits" name="subject2_credits" required>
+                    <input type="text" id="subject2_credits" name="subject2_credits" required pattern="^\d*(\.\d+)?$">
                 </div>
                 <div class="form-group grade-gpa-group" id="grade-gpa-group-2" style="display: none;">
                     <div>
@@ -69,11 +69,11 @@ include 'includes/header.php';
                 <h4 class="subject-title">Database</h4>
                 <div class="form-group">
                     <label for="subject3">Marks:</label>
-                    <input type="number" id="subject3" name="subject3" required>
+                    <input type="text" id="subject3" name="subject3" required pattern="^\d*(\.\d+)?$">
                 </div>
                 <div class="form-group">
                     <label for="subject3_credits">Credits:</label>
-                    <input type="number" id="subject3_credits" name="subject3_credits" required>
+                    <input type="text" id="subject3_credits" name="subject3_credits" required pattern="^\d*(\.\d+)?$">
                 </div>
                 <div class="form-group grade-gpa-group" id="grade-gpa-group-3" style="display: none;">
                     <div>
