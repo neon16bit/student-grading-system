@@ -20,7 +20,7 @@ include 'includes/header.php';
     <script src="js/script.js?<?php echo time(); ?>"></script>
 </head>
 
-<body>
+<body style="height: 100vh;">
     <div class="grades-container">
         <h2 class="grades-title">Enter Student Grades</h2>
         <form id="gradesForm" class="grades-form" action="store_grades.php" method="POST">
