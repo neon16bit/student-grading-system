@@ -92,6 +92,11 @@ include 'includes/header.php';
         </form>
         <a href="view_grades.php" class="view-link">View All Student Grades</a>
     </div>
+    <?php if (isset($_GET['success']) && $_GET['success'] == 'true') : ?>
+        <script>
+            alert('The grades have been added successfully.');
+        </script>
+    <?php endif; ?>
     <?php include 'includes/footer.php'; ?>
 </body>
 
